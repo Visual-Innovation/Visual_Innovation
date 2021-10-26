@@ -43,7 +43,10 @@ require_once('connect.php');
             }
             else
             {
-                $cmd = $pdo->prepare("INSERT INTO usuario(loginUsuario,senha) VALUES ('$login','$senha')");
+                $cmd = $pdo->prepare("INSERT INTO usuario(loginUsuario,senha) 
+                VALUES (:l,:s)");
+                $cmd->bindValue(":l",$login);
+                $cmd->bindValue(":s",$senha);
                 $cmd->execute();
                 return true;
             }    
