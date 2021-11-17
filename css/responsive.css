@@ -1,0 +1,175 @@
+@media screen and (min-width: 1340px) {
+
+    #carousel .carousel-inner,
+    #carousel .carousel-item {
+        height: 85vh;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .formLogin form {
+        width: 330px;
+    }
+
+    #containerDepoimentos {
+        padding: 1rem;
+    }
+
+    .offcanvas-end {
+        width: 250px;
+    }
+
+    #containerGaleria {
+        padding: 2rem;
+    }
+
+    #servico {
+        max-width: 300px;
+    }
+    #containerServico{
+        padding: 2rem;
+    }
+    #containerBemVindo{
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    #containerLogin {
+        min-height: 125vh;
+    }
+
+    .formLogin form {
+        width: 300px;
+        transform: translateY(10%);
+    }
+
+    .imgLogoLogin {
+        transform: translate(-50%, -210%);
+    }
+
+    #createConta {
+        transform: translatey(50%);
+    }
+
+    #containerDepoimentos {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .offcanvas-end {
+        width: 230px;
+    }
+
+    .imgIndicators li {
+        margin-left: 4px;
+    }
+
+    #Servico {
+        max-width: 270px;
+    }
+
+
+}
+
+@media screen and (max-width:767px) {
+    #cardServico {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #navbar {
+        height: 13vh;
+    }
+
+    .nav {
+        display: flex;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .nav-item {
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+
+    #imgLogoHome {
+        width: 110px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    #formServico {
+        transform: translate(-35%, -50%);
+    }
+
+    .imgLogoNewServico {
+        transform: translate(20%, -230%);
+    }
+
+
+}
+
+@media screen and (max-width:540px) {
+    #formServico {
+        transform: translate(-50%, -20%);
+    }
+
+    .imgLogoNewServico {
+        transform: translate(-50%, -130%);
+    }
+
+
+}
+
+@media screen and (max-width:500px) {
+    #formServico form {
+        width: 300px;
+
+    }
+
+    #formServico {
+        transform: translate(-50%, -10%);
+    }
+
+    .imgLogoNewServico {
+        transform: translate(-50%, -100%);
+    }
+}
+
+@media screen and (max-width:320px) {
+    #formServico form {
+        width: 300px;
+
+    }
+
+    .imgLogoNewServico {
+        transform: translate(-50%, -100%);
+    }
+
+    .nav-item {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+
+}
+
+
+@media screen and (max-width:990px) {
+
+    #cardNext,
+    #cardTotal,
+    #cardCheck {
+        margin: auto;
+    }
+
+    #cardTotal,
+    #cardCheck {
+        margin-top: 2rem;
+    }
+
+}
