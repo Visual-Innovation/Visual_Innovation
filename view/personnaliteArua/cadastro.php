@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="../../css/main.css">
 
         <title>Login - Personnalité Aruã Cabelo e Estética</title>
     </head>
@@ -15,15 +15,14 @@
             <div class="container">
                 <!--Img Logo Navbar-->
                 <div id="imgLogoNavbar">
-                    <a href="home.html" class="navbar-brand">
-                        <img src="/assets/Logos/Arua_logo_padrao.png" alt="logo">
+                    <a href="home.php" class="navbar-brand">
+                        <img src="../../assets/Logos/Arua_logo_padrao.png" alt="logo">
                     </a>
                 </div>
                 <!--Img Logo Navbar-->
 
                 <!--Button-->
-                <button type="button" id="canvas" class="navbar-toggler" data-bs-toggle="offcanvas"
-                    data-bs-target="#itens">
+                <button type="button" id="canvas" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#itens">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!--Button-->
@@ -33,8 +32,7 @@
                     <!--Canvas Header-->
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title">Personnalité Aruã</h5>
-                        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="cl"></button>
+                        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="cl"></button>
                     </div>
                     <!--Canvas Header-->
 
@@ -42,10 +40,10 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.html">Home</a>
+                                <a class="nav-link" href="home.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="sobre.html">Sobre</a>
+                                <a class="nav-link" href="sobre.php">Sobre</a>
                             </li>
 
 
@@ -54,17 +52,17 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Serviços</a>
                                 <ul id="bgDropdown" class="dropdown-menu dropdown-menu-dark">
                                     <li>
-                                        <a href="servicoFem.html" class="dropdown-item text-white">Feminino</a>
+                                        <a href="servicoFem.php" class="dropdown-item text-white">Feminino</a>
                                     </li>
                                     <li>
-                                        <a href="servicoMas.html" class="dropdown-item text-white">Masculino</a>
+                                        <a href="servicoMas.php" class="dropdown-item text-white">Masculino</a>
                                     </li>
                                 </ul>
                             </li>
                             <!--Dropdown-->
 
                             <li class="nav-item">
-                                <a class="nav-link" href="login.html">Login</a>
+                                <a class="nav-link" href="login.php">Login</a>
                             </li>
                         </ul>
                     </div>
@@ -78,14 +76,12 @@
         <!--cadastro-->
         <div id="Cadastro" class="container-fluid ">
             <div class="align-items-center">
-                <a href="login.html" class="text-decoration-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-arrow-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                <a href="login.php" class="text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                     </svg>
                 </a>
-                <a href="login.html" class="text-decoration-none text-secondary text-center a-item">Login</a>
+                <a href="login.php" class="text-decoration-none text-secondary text-center a-item">Login</a>
             </div>
             <div>
                 <h4 class="text-center display-6">Complete sua Conta Pessoal</h4>
@@ -122,11 +118,10 @@
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-            integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
         </script>
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/script.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/script.js"></script>
 
     </body>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
 
     <title>Dashboard - Agenda</title>
 </head>
@@ -19,13 +19,13 @@
        class="col-12  col-md-2 col-lg-2 col-xl-2 sticky-top bg-dark d-flex justify-content-center">
            <ul class="nav ">
                <li id="imgLogoHome" class="nav-item">
-                   <a href="/view/personnaliteArua/home.html" class="text-decoration-none fs-3">
-                       <img src="/assets/Logos/Arua_logo_padrao.png" alt="Logo" class="img-fluid">
+                   <a href="../../view/personnaliteArua/home.php" class="text-decoration-none fs-3">
+                       <img src="../../assets/Logos/Arua_logo_padrao.png" alt="Logo" class="img-fluid">
                        <span class=" text-center d-none d-xl-block">Home</span>
                    </a>
                </li>
                <li class="nav-item">
-                   <a href="dashboard.html" class="text-decoration-none fs-3">
+                   <a href="dashboard.php" class="text-decoration-none fs-3">
                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                            class="bi bi-speedometer2" viewBox="0 0 16 16">
                            <path
@@ -37,7 +37,7 @@
                    </a>
                </li>
                <li class="nav-item ">
-                   <a href="dashboard-agenda.html" class="text-decoration-none fs-3">
+                   <a href="dashboard-agenda.php" class="text-decoration-none fs-3">
                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                            class="bi bi-calendar-fill" viewBox="0 0 16 16">
                            <path
@@ -47,7 +47,7 @@
                    </a>
                </li>
                <li class="nav-item">
-                   <a href="dashboard-servico.html" class="text-decoration-none fs-3">
+                   <a href="dashboard-servico.php" class="text-decoration-none fs-3">
                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                            class="bi bi-scissors" viewBox="0 0 16 16">
                            <path
@@ -167,7 +167,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
 </body>
 
 </html>
