@@ -1,3 +1,8 @@
+<?php
+require_once '../../model/Usuario.php';
+$u = new Usuario;
+?>
+
 <doctype html>
     <html lang="pt-br">
 
@@ -108,7 +113,27 @@
                     </div>
 
                     <div class="d-flex align-items-center justify-content-center">
-                        <button type="submit" class="btn btn-dark">Criar Conta</button>
+                        <button type="submit" class="btn btn-dark" name="btn-cadastro">Criar Conta</button>
+                        
+                        <?php
+                        if (isset($_POST['email'])) {
+                            $nomeUsuario = addslashes($_POST['nome']);
+                            $dataNascimento = addslashes($_POST['date']);
+                            $loginUsuario = addslashes($_POST['email']);
+                            $senha = addslashes($_POST['senha']);
+                            $validarSenha = addslashes($_POST['validacaoSenha']);
+                            
+                            if (!empty($nomeUsuario) && !empty($dataNascimento) && !empty($loginUsuario) && !empty($senha)) {
+                                $con =  new PDO("mysql:dbname=personalite_aruan; host=localhost", 'root', '');
+                                if ($u->cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)) {
+                                       echo "<script>alert('Cadastrado com sucesso!')</script>";
+                                  
+                                }
+                            } else {
+                                echo "<script>alert('Usuário não cadastrado. Preencha todos os campos.')</script>";
+                            }
+                        }
+                        ?>
                     </div>
 
                 </form>
