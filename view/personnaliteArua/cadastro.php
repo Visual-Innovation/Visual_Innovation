@@ -15,6 +15,7 @@ $u = new Usuario;
     </head>
 
     <body>
+
         <!--Navbar-->
         <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark ">
             <div class="container">
@@ -91,7 +92,10 @@ $u = new Usuario;
             <div>
                 <h4 class="text-center display-6">Complete sua Conta Pessoal</h4>
             </div>
+            <?php
 
+
+            ?>
             <div class="formCadastro">
                 <form action="" method="post">
                     <p>
@@ -114,23 +118,23 @@ $u = new Usuario;
 
                     <div class="d-flex align-items-center justify-content-center">
                         <button type="submit" class="btn btn-dark" name="btn-cadastro">Criar Conta</button>
-                        
                         <?php
+
                         if (isset($_POST['email'])) {
                             $nomeUsuario = addslashes($_POST['nome']);
                             $dataNascimento = addslashes($_POST['date']);
                             $loginUsuario = addslashes($_POST['email']);
                             $senha = addslashes($_POST['senha']);
                             $validarSenha = addslashes($_POST['validacaoSenha']);
-                            
+
                             if (!empty($nomeUsuario) && !empty($dataNascimento) && !empty($loginUsuario) && !empty($senha)) {
                                 $con =  new PDO("mysql:dbname=personalite_aruan; host=localhost", 'root', '');
                                 if ($u->cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)) {
-                                       echo "<script>alert('Cadastrado com sucesso!')</script>";
-                                  
+                                    echo "<script>alert('Cadastrado com sucesso!');
+                                    self.location.href='login.php'</script>";
                                 }
                             } else {
-                                echo "<script>alert('Usuário não cadastrado. Preencha todos os campos.')</script>";
+                                echo "<script>alert('Usuário não cadastrado. Preencha todos os campos.');</script>";
                             }
                         }
                         ?>
