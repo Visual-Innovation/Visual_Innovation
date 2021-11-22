@@ -6,7 +6,7 @@ require_once '../../conexao/conexao.php';
 <?php
 class Usuario
 {
-
+    
     public function cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)
     {
         global $pdo;
