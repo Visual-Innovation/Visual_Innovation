@@ -26,7 +26,13 @@ class Servico
         $cmd->execute();
         if ($cmd->rowCount() > 0) //email ja cadastrado no banco 
         {
-            echo "<script>alert('Serviço já está cadastrado!');</script>";
+?>
+            <div class="alert alert-danger text-center mt-2" role="alert">
+            Serviço já está cadastrado!
+            </div>
+
+<?php
+            //echo "<script>alert('Serviço já está cadastrado!');</script>";
             return false;
         } else {
             $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valor)
