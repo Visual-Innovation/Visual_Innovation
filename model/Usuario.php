@@ -1,12 +1,11 @@
 <?php
-session_start();
 require_once '../../conexao/conexao.php';
 ?>
 
 <?php
 class Usuario
 {
-    
+
     public function cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)
     {
         global $pdo;
@@ -16,8 +15,11 @@ class Usuario
         $cmd->execute();
         if ($cmd->rowCount() > 0) //Nome do cliente já existe...
         {
-            //$_SESSION['msg'] = "<p style='color=blue;'>Usuário Já Cadastrado</p>";
-            echo "<script>alert('Usuário Já Cadastrado!')</script>";
+            ?>
+            <div class="alert alert-danger text-center mt-2" role="alert">
+            Usuário já está cadastrado!
+            </div>
+            <?php
             return false;
         } else {
 
