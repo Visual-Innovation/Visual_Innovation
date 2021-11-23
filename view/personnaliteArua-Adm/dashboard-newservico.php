@@ -1,3 +1,9 @@
+<?php
+require_once '../../model/Servicos.php';
+$s = new Servico("personalite_aruan", "localhost", "root", "");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -64,17 +70,31 @@
                 <div id="formServico">
                     <form action="" method="post" class="border border-dark">
                         <label for="labelNome" class="form-label">Nome</label>
-                        <p><input type="text" name="" id="labelNome" class="input"></p>
+                        <p><input type="text" name="nome" id="labelNome" class="input"></p>
 
                         <label for="labelTempo" class="form-label">Tempo Estimado</label>
-                        <p><input type="text" name="" id="labelTempo" class="input"></p>
+                        <p><input type="text" name="tempoEstimado" id="labelTempo" class="input"></p>
 
                         <label for="labelValor" class="form-label">Valor</label>
-                        <p><input type="text" name="" id="labelValor" class="input"></p>
+                        <p><input type="text" name="valor" id="labelValor" class="input"></p>
 
                         <div class="d-flex justify-content-end">
                             <button type="submit" class="btn btn-dark" id="btnCadastar">Cadastrar</button>
                         </div>
+                        <?php
+                        if (isset($_POST['nome'])) {
+                            $nome = addslashes($_POST['nome']);
+                            $tempoEstimado = addslashes($_POST['tempoEstimado']);
+                            $valor = addslashes($_POST['valor']);
+                            if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
+                                if ($s->cadastrarServico($nome, $tempoEstimado, $valor)) {
+                                    echo "<script>alert('Cadastrado com Sucesso!');</script>";
+                                }
+                            } else {
+                                echo "<script>alert('Preencha Todos os campos');</script>";
+                            }
+                        }
+                        ?>
                     </form>
                 </div>
             </div>
