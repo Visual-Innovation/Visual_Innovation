@@ -134,7 +134,11 @@ $u = new Usuario;
                                     self.location.href='login.php'</script>";
                                 }
                             } else {
-                                echo "<script>alert('Usuário não cadastrado. Preencha todos os campos.');</script>";
+                        ?>
+                                <div class="alert alert-danger text-center ml-100" role="alert">
+                                    Preencha Todos os campos!!!
+                                </div>
+                        <?php
                             }
                         }
                         ?>
