@@ -5,12 +5,21 @@ require_once '../../conexao/conexao.php';
 <?php
 class Servico
 {
+    public function buscarTodosDados()
+    {
+        global $pdo;
+        $res = array();
+        $cmd = $pdo->query("SELECT * FROM servico ORDER BY nomeServico");
+        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+    }
 
     public function buscarDados()
     {
         global $pdo;
         $res = array();
-        $cmd = $pdo->query("SELECT * FROM servico ORDER BY nomeServico");
+        $cmd = $pdo->query("SELECT s.nomeServico, s.tempoEstimado,s.valor
+         FROM servico AS s ORDER BY nomeServico");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
@@ -28,7 +37,7 @@ class Servico
         {
 ?>
             <div class="alert alert-danger text-center mt-2" role="alert">
-            Serviço já está cadastrado!
+                Serviço já está cadastrado!
             </div>
 
 <?php
@@ -43,5 +52,37 @@ class Servico
             $cmd->execute();
             return true;
         }
+    }
+
+    public function buscarDadosServico($id)
+    {
+        global $pdo;
+
+        $cmd = $pdo->prepare("SELECT * FROM servico WHERE codServico = :id");
+        $cmd->bindValue(":id", $id);
+        $cmd->execute();
+        $res = $cmd->fetch(PDO::FETCH_ASSOC);
+        return $res;
+    }
+
+    public function excluirServico($id)
+    {
+        global $pdo;
+
+        $cmd = $pdo->prepare("DELETE FROM servico WHERE codServico = :id");
+        $cmd->bindValue(":id", $id);
+        $cmd->execute();
+    }
+
+    public function atualizarDados($id, $nome, $tempoEstimado, $valor)
+    {
+        $cmd = $this->pdo->prepare("UPDATE servico SET nomeServico = :n, tempoEstimado = :t, 
+        valor = :v WHERE codServico = :id");
+        $cmd->bindValue(":n", $nome);
+        $cmd->bindValue(":t", $tempoEstimado);
+        $cmd->bindValue(":v", $valor);
+        $cmd->bindValue(":id", $id);
+        $cmd->execute();
+        return true;
     }
 }
