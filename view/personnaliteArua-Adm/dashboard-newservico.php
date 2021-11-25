@@ -88,15 +88,19 @@ $s = new Servico("personalite_aruan", "localhost", "root", "");
                             $valor = addslashes($_POST['valor']);
                             if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
                                 if ($s->cadastrarServico($nome, $tempoEstimado, $valor)) {
-                                    ?>
+                        ?>
                                     <div class="alert alert-success text-center mt-2" role="alert">
-                                    Cadastrado Com Sucesso!!!
+                                        Cadastrado Com Sucesso!!!
                                     </div>
-                        
-                                    <?php
+
+                                <?php
                                 }
                             } else {
-                                echo "<script>alert('Preencha Todos os campos');</script>";
+                                ?>
+                                <div class="alert alert-danger text-center mt-2" role="alert">
+                                    Preencha Todos os campos!!!
+                                </div>
+                        <?php
                             }
                         }
                         ?>
