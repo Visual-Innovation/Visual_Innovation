@@ -131,16 +131,14 @@ $s = new Servico;
                             for ($i = 0; $i < count($dados); $i++) {
                                 echo "<tr>";
                                 foreach ($dados[$i] as $k => $v) {
+                                    if($k != 'codServico'){
                                     echo "<td>" . $v . "</td>";
+                                    }
                                 }
-                            }
-
-                            $id_servico = $s->buscarTodosDados();
-                            for ($i = 0; $i < count($dados); $i++) {
                         ?>
                                 <td>
                                     <a href="dashboard-newservico.php?codServico=">Editar</a>
-                                    <a href="dashboard-servico.php?codServico=<?php echo $id_servico[$i]['codServico']; ?>">Excluir</a>
+                                    <a href="dashboard-servico.php?codServico=<?php echo $dados[$i]['codServico']; ?>">Excluir</a>
                                 </td>
                             <?php
                                 echo "</tr>";
