@@ -82,12 +82,15 @@ $s = new Servico("personalite_aruan", "localhost", "root", "");
                             <button type="submit" class="btn btn-dark" id="btnCadastar">Cadastrar</button>
                         </div>
                         <?php
+
+
                         if (isset($_POST['nome'])) {
                             $nome = addslashes($_POST['nome']);
                             $tempoEstimado = addslashes($_POST['tempoEstimado']);
                             $valor = addslashes($_POST['valor']);
+                            $data = date('d/m/y');
                             if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
-                                if ($s->cadastrarServico($nome, $tempoEstimado, $valor)) {
+                                if ($s->cadastrarServico($nome, $tempoEstimado, $valor, $data)) {
                         ?>
                                     <div class="alert alert-success text-center mt-2" role="alert">
                                         Cadastrado Com Sucesso!!!
