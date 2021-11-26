@@ -5,27 +5,19 @@ require_once '../../conexao/conexao.php';
 <?php
 class Servico
 {
-    public function buscarTodosDados()
-    {
-        global $pdo;
-        $res = array();
-        $cmd = $pdo->query("SELECT * FROM servico ORDER BY nomeServico");
-        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
-        return $res;
-    }
 
     public function buscarDados()
     {
         global $pdo;
         $res = array();
-        $cmd = $pdo->query("SELECT s.nomeServico, s.tempoEstimado,s.valor
-         FROM servico AS s ORDER BY nomeServico");
+        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.tempoEstimado,s.valor,s.dataServico
+         FROM servico AS s ORDER BY dataServico");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
 
     //FUNÇÃO PARA CADASTRAR PESSOAS NO BANCO DE DADOS
-    public function cadastrarServico($nome, $tempoEstimado, $valor)
+    public function cadastrarServico($nome, $tempoEstimado, $valor, $dataServico)
     {
         global $pdo;
 
@@ -44,11 +36,12 @@ class Servico
             //echo "<script>alert('Serviço já está cadastrado!');</script>";
             return false;
         } else {
-            $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valor)
-                VALUES(:n,:tmp,:vl)");
+            $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valor, dataServico)
+                VALUES(:n,:tmp,:vl,:d)");
             $cmd->bindValue(":n", $nome);
             $cmd->bindValue(":tmp", $tempoEstimado);
             $cmd->bindValue(":vl", $valor);
+            $cmd->bindValue(":d", $dataServico);
             $cmd->execute();
             return true;
         }
