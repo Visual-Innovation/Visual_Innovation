@@ -1,43 +1,17 @@
 <?php
+require_once '../../conexao/conexao.php';
 
-    class Agendamento {
-        private $codAgendamento;
-        private $codFuncionario;
-        private $codUsuario;
-        private $nomeCliente;
-        private $data;
-        private $confirma;
 
-        public function setCodAgendamento($cod) {
-            $this -> codAgendamento = $cod;
-        }
-
-        public function getCodAgendamento() {
-            return $this -> codAgendamento;        
-        }
-
-        public function setNomeCliente($nome) {
-            $this -> nomeCliente = $nome;
-        }
-
-        public function getNomeCliente() {
-            return $this -> nomeCliente;        
-        }
-
-        public function setData($date) {
-            $this -> data = $date;
-        }
-
-        public function getData() {
-            return $this -> data;        
-        }
-
-        public function setConfirma($confimacao) {
-            $this -> confirma = $confimacao;
-        }
-
-        public function getConfirma() {
-            return $this -> confirma;        
-        }
+class Agendamento
+{
+    public function buscarDados()
+    {
+        global $pdo;
+        $res = array();
+        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.dataServico,s.tempoEstimado
+         FROM servico AS s ORDER BY nomeServico");
+        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
     }
+}
 ?>
