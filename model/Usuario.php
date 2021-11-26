@@ -26,7 +26,7 @@ class Usuario
             $cmd->bindValue(":n", $nomeUsuario);
             $cmd->bindValue(":dtN", $dataNascimento);
             $cmd->bindValue(":l", $loginUsuario);
-            $cmd->bindValue(":s", $senha);
+            $cmd->bindValue(":s", md5($senha));
             $cmd->execute();
             return true;
         }
