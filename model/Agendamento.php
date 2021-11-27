@@ -9,7 +9,7 @@ class Agendamento
         global $pdo;
         $res = array();
         $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.dataServico,s.tempoEstimado
-         FROM servico AS s ORDER BY nomeServico");
+         FROM servico AS s ORDER BY dataServico");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
