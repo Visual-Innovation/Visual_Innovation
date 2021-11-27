@@ -17,12 +17,12 @@ $s = new Servico;
 </head>
 
 <body>
-    <?php
+    <?php /*
     if (isset($_POST['nome'])) //CLICOU NO BOTÃO CADASTRAR OU EDITAR
     {
         //---------------------EDITAR-----------------------------//
-        if (isset($_GET['id_up']) && !empty($_GET['id_up'])) {
-            $id_upd = addslashes($_GET['id_up']);
+        if (isset($_GET['codServico']) && !empty($_GET['codServico'])) {
+            $id_upd = addslashes($_GET['codServico']);
             $nome = addslashes($_POST['nome']);
             $tempoEstimado = addslashes($_POST['tempoEstimado']);
             $valor = addslashes($_POST['valor']);
@@ -33,11 +33,12 @@ $s = new Servico;
     ?>
                 <div class="aviso">
                     <h4>Preencha todos os campos</h4>
-                </div>
+                </div>*/
+    ?>
     <?php
-            }
-        }
-    }
+    //}
+    // }
+    // }
     if (isset($_GET['codServico'])) { //SE O USUÁRIO CLICOU NO BOTÃO EDITAR
         $id_update  = addslashes($_GET['codServico']);
         $res = $s->buscarDadosServico($id_update);
@@ -131,13 +132,13 @@ $s = new Servico;
                             for ($i = 0; $i < count($dados); $i++) {
                                 echo "<tr>";
                                 foreach ($dados[$i] as $k => $v) {
-                                    if($k != 'codServico'){
-                                    echo "<td>" . $v . "</td>";
+                                    if ($k != 'codServico') {
+                                        echo "<td>" . $v . "</td>";
                                     }
                                 }
                         ?>
                                 <td>
-                                    <a href="dashboard-newservico.php?codServico=">Editar</a>
+                                    <a href="dashboard-newservico.php?codServico=<?php echo $dados[$i]['codServico']; ?>">Editar</a>
                                     <a href="dashboard-servico.php?codServico=<?php echo $dados[$i]['codServico']; ?>">Excluir</a>
                                 </td>
                             <?php
