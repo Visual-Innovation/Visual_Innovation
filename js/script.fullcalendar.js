@@ -1,3 +1,4 @@
+
 //Calendar
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
     calendar.render();
+
 });

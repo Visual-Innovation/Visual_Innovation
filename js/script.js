@@ -1,3 +1,4 @@
+
 /*Galeria*/
 $(document).ready(function () {
 

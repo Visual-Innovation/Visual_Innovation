@@ -1,42 +1,35 @@
+
 <?php
+require_once '../../conexao/conexao.php';
 
-    class Usuario {
-        private $codUsuario;
-        private $nomeUsuario;
-        private $dataNascimento;
-        private $loginUsuario;
-        private $senha;
-       
-        public function setCodUsuario($cod) {
-            $this -> codUsuario = $cod;
-        }
+class Usuario
+{
 
-        public function getCodUsuario() {
-            return $this -> codUsuario;
-        }
-        
-         public function setNomeUsuario($nome) {
-            $this -> nomeUsuario = $nome;
-        }
+    public function cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)
+    {
+        global $pdo;
 
-        public function getNomeUsuario() {
-            return $this -> nomeUsuario;
-        }
+        $cmd = $pdo->prepare("SELECT codUsuario FROM tb_usuario WHERE loginUsuario = :l");
+        $cmd->bindValue(":l", $loginUsuario);
+        $cmd->execute();
+        if ($cmd->rowCount() > 0) //Nome do cliente já existe...
+        {
+            ?>
+            <div class="alert alert-danger text-center mt-2" role="alert">
+            Usuário já está cadastrado!
+            </div>
+            <?php
+            return false;
+        } else {
 
-        public function setLoginUsuario($login) {
-            $this -> loginUsuario = $login;
-        }
-
-        public function getLoginUsuario() {
-            return $this -> loginUsuario;
-        }
-
-        public function setSenha($senha) {
-            $this -> senha = $senha;
-        }
-
-        public function getSenha() {
-            return $this -> senha;
+            $cmd = $pdo->prepare("INSERT INTO tb_usuario(nomeUsuario,dataNascimento,loginUsuario,senha) 
+                VALUES (:n,:dtN,:l,:s)");
+            $cmd->bindValue(":n", $nomeUsuario);
+            $cmd->bindValue(":dtN", $dataNascimento);
+            $cmd->bindValue(":l", $loginUsuario);
+            $cmd->bindValue(":s", $senha);
+            $cmd->execute();
+            return true;
         }
     }
-?>
+}

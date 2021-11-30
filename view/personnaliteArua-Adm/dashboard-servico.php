@@ -1,3 +1,8 @@
+<?php
+require_once '../../model/Servicos.php';
+$s = new Servico;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -93,7 +98,33 @@
                                 <th scope="col">Ação</th>
                             </tr>
                         </thead>
+                        <?php
+                        $dados = $s->buscarDados();
+                        if (count($dados) > 0) { // Tem Pessoas cadastradas no banco 
+                            for ($i = 0; $i < count($dados); $i++) {
+                                echo "<tr>";
+                                foreach ($dados[$i] as $k => $v) {
+                                    if ($k != 'codServico') {
+                                        echo "<td>" . $v . "</td>";
+                                    }
+                                }
+                        ?>
+                                <td>
+                                    <a href="dashboard-newservico.php?codServico=<?php echo $dados[$i]['codServico']; ?>">Editar</a>
+                                    <a href="dashboard-servico.php?codServico=<?php echo $dados[$i]['codServico']; ?>">Excluir</a>
+                                </td>
+                            <?php
+                                echo "</tr>";
+                            }
+                        } else {
+                            ?>
                     </table>
+                    <div class="aviso">
+                        <h4>Ainda não há Serviços cadastrados!</h4>
+                    </div>
+                <?php
+                        }
+                ?>
                 </div>
                 <!--table-->
             </div>
@@ -110,3 +141,11 @@
 </body>
 
 </html>
+
+<?php
+if (isset($_GET['codServico'])) {
+    $id_servico = addslashes($_GET['codServico']);
+    $s->excluirServico($id_servico);
+    echo "<script>self.location.href='dashboard-servico.php'</script>";
+}
+?>

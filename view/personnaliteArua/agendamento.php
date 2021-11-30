@@ -3,6 +3,7 @@
     require_once '../../model/Agendamento.php';
     $p = new Agendamento;
 ?>
+
 <doctype html>
     <html lang="pt-br">
 
@@ -177,6 +178,7 @@
                                 </div>
                                 <div class="modal-footer">
                                   
+
                                 </div>
                             </div>
                         </div>
