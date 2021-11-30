@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once '../../model/Agendamento.php';
-    $p = new agendar("personalite_aruan", "localhost", "root", "");
+    $p = new Agendamento;
 ?>
 <doctype html>
     <html lang="pt-br">

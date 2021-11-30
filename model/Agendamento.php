@@ -1,26 +1,9 @@
 <?php
-    class agendar
-{
-        private $pdo;
-        
-        
-        public function __construct($dbname, $host, $user, $senha)
-        {
-            try 
-            {
-                $this->pdo = new PDO("mysql:dbname=".$dbname.";host=".$host, $user, $senha);
-            } 
-                catch (PDOException $e)
-                 {
-                        echo "Erro com banco de dados".$e->getMessage();
-                        exit();
-                 }
-                        catch(Exception $e)
-                        {
-                                echo "Erro sem relação ao banco de dados".$e->getMessage();
-                                exit();
-                        }
-        }
+require_once '../model/Conexao.php';
+
+class Agendamento {
+
+      
             public function agendar($nomeUsuario, $nomeServico, $precoServico, $dataAgendamento)
             { 
                                 $cmd = $this->pdo->prepare("INSERT INTO agendamento(nomeUsuario, nomeServico, precoServico, dataAgendamento) 
