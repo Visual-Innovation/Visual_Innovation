@@ -7,7 +7,7 @@ class Servico
     {
         global $pdo;
         $res = array();
-        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.tempoEstimado,s.valor,s.dataServico
+        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.tempoEstimado,s.valorServico,s.dataServico
          FROM servico AS s ORDER BY nomeServico");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         return $res;
@@ -33,7 +33,7 @@ class Servico
             //echo "<script>alert('Serviço já está cadastrado!');</script>";
             return false;
         } else {
-            $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valor, dataServico)
+            $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valorServico, dataServico)
                 VALUES(:n,:tmp,:vl,:d)");
             $cmd->bindValue(":n", $nome);
             $cmd->bindValue(":tmp", $tempoEstimado);
