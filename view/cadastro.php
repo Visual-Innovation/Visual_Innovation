@@ -1,29 +1,21 @@
-
-<?php
-require_once '../../model/Usuario.php';
-$u = new Usuario;
-?>
-
 <doctype html>
     <html lang="pt-br">
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../../css/main.css">
-
         <title>Login - Personnalité Aruã Cabelo e Estética</title>
+        <link rel="stylesheet" href="../css/main.css">
     </head>
 
     <body>
-
         <!--Navbar-->
-        <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark ">
+        <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark">
             <div class="container">
                 <!--Img Logo Navbar-->
                 <div id="imgLogoNavbar">
                     <a href="home.php" class="navbar-brand">
-                        <img src="../../assets/Logos/Arua_logo_padrao.png" alt="logo">
+                        <img src="../assets/Arua_logo_padrao.png" alt="logo">
                     </a>
                 </div>
                 <!--Img Logo Navbar-->
@@ -85,10 +77,11 @@ $u = new Usuario;
             <div class="align-items-center">
                 <a href="login.php" class="text-decoration-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                     </svg>
                 </a>
-                <a href="login.php" class="text-decoration-none text-secondary text-center a-item">Login</a>
+                <a href="login.php" class="text-decoration-none text-secondary text-center">Login</a>
             </div>
             <div>
                 <h4 class="text-center display-6">Complete sua Conta Pessoal</h4>
@@ -115,31 +108,7 @@ $u = new Usuario;
                     </div>
 
                     <div class="d-flex align-items-center justify-content-center">
-                        <button type="submit" class="btn btn-dark" name="btn-cadastro">Criar Conta</button>
-                        <?php
-
-                        if (isset($_POST['email'])) {
-                            $nomeUsuario = addslashes($_POST['nome']);
-                            $dataNascimento = addslashes($_POST['date']);
-                            $loginUsuario = addslashes($_POST['email']);
-                            $senha = addslashes($_POST['senha']);
-                            $validarSenha = addslashes($_POST['validacaoSenha']);
-
-                            if (!empty($nomeUsuario) && !empty($dataNascimento) && !empty($loginUsuario) && !empty($senha)) {
-                                $con =  new PDO("mysql:dbname=personalite_aruan; host=localhost", 'root', '');
-                                if ($u->cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)) {
-                                    echo "<script>alert('Cadastrado com sucesso!');
-                                    self.location.href='login.php'</script>";
-                                }
-                            } else {
-                        ?>
-                                <div class="alert alert-danger text-center ml-100" role="alert">
-                                    Preencha Todos os campos!!!
-                                </div>
-                        <?php
-                            }
-                        }
-                        ?>
+                        <button type="submit" class="btn btn-dark">Criar Conta</button>
                     </div>
 
                 </form>
@@ -151,8 +120,8 @@ $u = new Usuario;
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
         </script>
-        <script src="../../js/bootstrap.min.js"></script>
-        <script src="../../js/script.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/script.js"></script>
 
     </body>
 

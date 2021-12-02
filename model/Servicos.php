@@ -1,17 +1,16 @@
 <?php
 require_once '../../conexao/conexao.php';
-?>
 
-<?php
 class Servico
 {
+
 
     public function buscarDados()
     {
         global $pdo;
         $res = array();
-        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.tempoEstimado,s.valor,s.dataServico
-         FROM servico AS s ORDER BY dataServico");
+        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.tempoEstimado,s.valorServico,s.dataServico
+         FROM servico AS s ORDER BY nomeServico");
         $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
@@ -36,7 +35,7 @@ class Servico
             //echo "<script>alert('Serviço já está cadastrado!');</script>";
             return false;
         } else {
-            $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valor, dataServico)
+            $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valorServico, dataServico)
                 VALUES(:n,:tmp,:vl,:d)");
             $cmd->bindValue(":n", $nome);
             $cmd->bindValue(":tmp", $tempoEstimado);
@@ -69,13 +68,15 @@ class Servico
 
     public function atualizarDados($id, $nome, $tempoEstimado, $valor)
     {
-        $cmd = $this->pdo->prepare("UPDATE servico SET nomeServico = :n, tempoEstimado = :t, 
+        global $pdo;
+        $cmd = $pdo->prepare("UPDATE servico SET nomeServico = :n, tempoEstimado = :t, 
         valor = :v WHERE codServico = :id");
+        $cmd->bindValue(":id", $id);
         $cmd->bindValue(":n", $nome);
         $cmd->bindValue(":t", $tempoEstimado);
         $cmd->bindValue(":v", $valor);
-        $cmd->bindValue(":id", $id);
         $cmd->execute();
         return true;
     }
 }
+?>

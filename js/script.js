@@ -1,5 +1,5 @@
 /*Galeria*/
-$(document).ready(function () {
+$(document).ready(function() {
 
     $(".galeria .popup-link").magnificPopup({
         type: "image",
@@ -49,4 +49,3 @@ $(".owl-carousel").owlCarousel({
     }
 });
 //Carousel Sobre
-

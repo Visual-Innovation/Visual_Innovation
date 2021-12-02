@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once '../../model/Agendamento.php';
+    $p = new Agendamento;
+?>
 <doctype html>
     <html lang="pt-br">
 
@@ -122,53 +127,56 @@
                                     <h5 class="modal-title">Agendar</h5>
                                     <button class="btn btn-close" data-bs-dismiss="modal"></button>
                                 </div>
+                                <?php
+                                    if(isset($_POST['nomeUsuario']))
+                                    {
+                                        $nomeUsuario = addslashes($_POST['nomeUsuario']);
+                                        $nomeServico = addslashes($_POST['nomeServico']);
+                                        $precoServico = addslashes($_POST['precoServico']);
+                                        $dataAgendamento = addslashes($_POST['dataAgendamento']);
+                                            if(!empty($nomeUsuario) && !empty($nomeServico) && !empty($precoServico) &&($dataAgendamento))
+                                            {
+                                                    if($p->agendar($nomeUsuario, $nomeServico, $precoServico, $dataAgendamento))
+                                                    {
+                                                        echo "<script>alert('Agendamento realizado com sucesso!');
+                                                        self.location.href=' ../../view/personnaliteArua/home.php'</script>";
+                                                       
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<script>alert('Agendamento já foi realizado!');
+                                                        self.location.href=' ../../view/personnaliteArua/home.php'</script>";
+                                                       
+                                                    }
+                                            }
+                                                else
+                                                {
+                                                    echo "<script>alert('Preencha todos os campos do Agendamento!');
+                                                    self.location.href=' ../../view/personnaliteArua/home.php'</script>";
+                                                    
+                                                }
+                                    }
+                                ?>
                                 <div class="modal-body">
                                     <form action="" method="post">
                                         <label for="" class="form-label">Nome</label>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="nomeUsuario" id="" class="form-control">
 
                                         <label for="" class="form-label">Serviço</label>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="nomeServico" id="" class="form-control">
 
                                         <label for="" class="form-label">Preço</label>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="precoServico" id="" class="form-control">
 
                                         <label for="" class="form-label">Data</label>
-                                        <input type="datetime" name="" id="date" class="form-control">
+                                        <input type="datetime" name="dataAgendamento" id="date" class="form-control">
 
-                                        <label for="" class="form-label">Horários</label>
-                                        <input type="time" name="" id="time" class="form-control">
+                                        <button type="submit" class="btn btn-dark">Agendar</button>
 
-
-                                        <h4 class="mt-3">Horários</h4>
-
-                                        <ul class=" d-flex " id="botoesAgendar">
-                                            <li>
-                                                <button type="button">08:00</button>
-                                            </li>
-                                            <li>
-                                                <button>08:00</button>
-                                            </li>
-                                            <li>
-                                                <button>08:00</button>
-                                            </li>
-                                            <li>
-                                                <button>08:00</button>
-                                            </li>
-                                            <li>
-                                                <button>08:00</button>
-                                            </li>
-                                            <li>
-                                                <button>08:00</button>
-                                            </li>
-                                            <li>
-                                                <button>08:00</button>
-                                            </li>
-                                        </ul>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-dark">Agendar</button>
+                                  
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <?php
 require_once '../../model/Servicos.php';
-$s = new Servico("personalite_aruan", "localhost", "root", "");
+$s = new Servico;
 
 ?>
 
@@ -17,6 +17,12 @@ $s = new Servico("personalite_aruan", "localhost", "root", "");
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['codServico'])) { //SE O USUÁRIO CLICOU NO BOTÃO EDITAR
+        $id_update  = addslashes($_GET['codServico']);
+        $res = $s->buscarDadosServico($id_update);
+    }
+    ?>
     <!--Dashboard-->
     <div id="containerDashboard" class="container-fluid">
         <div class="row">
@@ -70,40 +76,67 @@ $s = new Servico("personalite_aruan", "localhost", "root", "");
                 <div id="formServico">
                     <form action="" method="post" class="border border-dark">
                         <label for="labelNome" class="form-label">Nome</label>
-                        <p><input type="text" name="nome" id="labelNome" class="input"></p>
+                        <p><input type="text" name="nome" id="labelNome" class="input" value="<?php if (isset($res)) {
+                                                                                                    echo $res['nomeServico'];
+                                                                                                } ?>"></p>
 
                         <label for="labelTempo" class="form-label">Tempo Estimado</label>
-                        <p><input type="text" name="tempoEstimado" id="labelTempo" class="input"></p>
+                        <p><input type="text" name="tempoEstimado" id="labelTempo" class="input" value="<?php if (isset($res)) {
+                                                                                                            echo $res['tempoEstimado'];
+                                                                                                        } ?>"></p>
 
                         <label for="labelValor" class="form-label">Valor</label>
-                        <p><input type="text" name="valor" id="labelValor" class="input"></p>
+                        <p><input type="text" name="valor" id="labelValor" class="input" value="<?php if (isset($res)) {
+                                                                                                    echo $res['valor'];
+                                                                                                } ?>"></p>
 
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-dark" id="btnCadastar">Cadastrar</button>
+                            <button type="submit" class="btn btn-dark" id="btnCadastar"><?php if (isset($res)) {
+                                                                                            echo "Atualizar";
+                                                                                        } else {
+                                                                                            echo "Cadastrar";
+                                                                                        } ?></button>
                         </div>
+
                         <?php
-
-
-                        if (isset($_POST['nome'])) {
-                            $nome = addslashes($_POST['nome']);
-                            $tempoEstimado = addslashes($_POST['tempoEstimado']);
-                            $valor = addslashes($_POST['valor']);
-                            $data = date('d/m/y');
-                            if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
-                                if ($s->cadastrarServico($nome, $tempoEstimado, $valor, $data)) {
+                        if (isset($_POST['nome'])) //CLICOU NO BOTÃO CADASTRAR OU EDITAR
+                        {
+                            //---------------------EDITAR-----------------------------//
+                            if (isset($_GET['codServico']) && !empty($_GET['codServico'])) {
+                                $id_upd = addslashes($_GET['codServico']);
+                                $nome = addslashes($_POST['nome']);
+                                $tempoEstimado = addslashes($_POST['tempoEstimado']);
+                                $valor = addslashes($_POST['valor']);
+                                if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
+                                    //EDITAR
+                                    $s->atualizarDados($id_upd, $nome, $tempoEstimado, $valor);
+                                    echo "<script>alert('Atualizado Com Sucesso!');
+                                    self.location.href='dashboard-servico.php';</script>";
+                                } else {
                         ?>
-                                    <div class="alert alert-success text-center mt-2" role="alert">
-                                        Cadastrado Com Sucesso!!!
+                                    <div class="aviso">
+                                        <h4>Preencha todos os campos</h4>
                                     </div>
-
                                 <?php
                                 }
                             } else {
+                                $nome = addslashes($_POST['nome']);
+                                $tempoEstimado = addslashes($_POST['tempoEstimado']);
+                                $valor = addslashes($_POST['valor']);
+                                $data = date('d/m/y');
+                                if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
+                                    if ($s->cadastrarServico($nome, $tempoEstimado, $valor, $data)) {
+
+                                        echo "<script>alert('Cadastrado Com Sucesso!');
+                                        self.location.href='dashboard-servico.php';</script>";
+                                    }
+                                } else {
                                 ?>
-                                <div class="alert alert-danger text-center mt-2" role="alert">
-                                    Preencha Todos os campos!!!
-                                </div>
+                                    <div class="alert alert-danger text-center mt-2" role="alert">
+                                        Preencha Todos os campos!!!
+                                    </div>
                         <?php
+                                }
                             }
                         }
                         ?>
