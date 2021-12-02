@@ -1,29 +1,21 @@
 <?php
+require_once '../model/Conexao.php';
 
-    include 'Conexao.php';
+class Agendamento
+{
 
-    class Agendamento {
-        
 
-        public function agendar($codAgendamento, $dataAgendamento) {
-            global $pdo;
-
-            $sql = "SELECT codAgendamento, dataAgendamento FROM Agendamento";
-            $sql = $pdo->prepare($sql);
-            $sql->execute();
-
-            $agenda = [];
-
-            while ($row_sql = $sql ->fetch(PDO::FETCH_ASSOC)) {
-                $codAgendamento = $row_sql['codAgendameno'];
-                $dataAgendamento = $row_sql['dataAgendamento'];
-
-                $agenda[] = [
-                    'codAgendamento' => $codAgendamento,
-                    'dataAgendamento' => $dataAgendamento,
-                ];
-            }
-            echo json_encode($agenda);
-        }
+    public function agendar($nomeUsuario, $nomeServico, $precoServico, $dataAgendamento)
+    {
+        $cmd = $this->pdo->prepare("INSERT INTO agendamento(nomeUsuario, nomeServico, precoServico, dataAgendamento) 
+                                    VALUES (:nu, :ns, :ps, :da)");
+        $cmd->bindValue(":nu", $nomeUsuario);
+        $cmd->bindValue(":ns", $nomeServico);
+        $cmd->bindValue(":ps", $precoServico);
+        $cmd->bindValue(":da", $dataAgendamento);
+        $cmd->execute();
+        return true;
     }
+}
+
 ?>
