@@ -1,7 +1,9 @@
 <?php
+require_once '../../conexao/conexao.php';
 
 class Servico
 {
+
 
     public function buscarDados()
     {
