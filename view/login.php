@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once('../model/Conexao.php');
+?>
+
 <doctype html>
     <html lang="pt-br">
 
@@ -85,7 +90,7 @@
 
             <!--Form Login-->
             <div class="formLogin">
-                <form action="" method="post">
+                <form action="../model/logar.php" method="post">
                     <!--Titles-->
                     <h2 class="display-5 text-center mt-4">Login</h2>
                     <p class="lead mb-2 text-center">Faça o login para continuar</p>
@@ -96,7 +101,7 @@
                         Usuário
                     </label>
                     <p>
-                        <input type="email" name="email" id="labelEmail" placeholder="Digite seu E-mail"
+                        <input type="email" name="loginUsuario" id="labelEmail" placeholder="Digite seu E-mail"
                             class="input p-2">
                     </p>
                     <label for="labelPassword" class="form-label">
@@ -114,7 +119,7 @@
                             <input type="checkbox" name="lembrar" id="labelCheck" class="form-check-input">
                             <label for="labelCheck" class="form-check-label">Lembre-me</label>
                         </div>
-                        <a href="#" class="text-secondary ms-auto ">Esqueceu a senha</a>
+                        <a href="recuperarSenha.php" class="text-secondary ms-auto ">Esqueceu a senha</a>
                     </div>
                     <!--Checkbox/Esqueceu a senha-->
 

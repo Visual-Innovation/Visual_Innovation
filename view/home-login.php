@@ -15,13 +15,16 @@
 
     <body>
 
+        <?php
+        require('../model/validaLoginAdmin.php');
+        ?>
 
         <!--Navbar-->
         <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-dark ">
             <div class="container">
                 <!--Img Logo Navbar-->
                 <div id="imgLogoNavbar">
-                    <a href="home.php" class="navbar-brand">
+                    <a href="home-login.php" class="navbar-brand">
                         <img src="../assets/Arua_logo_padrao.png" alt="logo">
                     </a>
                 </div>
@@ -46,7 +49,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.php">Home</a>
+                                <a class="nav-link" href="home-login.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="sobre.php">Sobre</a>
@@ -68,9 +71,9 @@
                             <!--Dropdown-->
 
                             <li class="nav-item">
-                                <a class="nav-link" href="login.php">Login</a>
+                                <a class="nav-link btn btn-outline-warning" href="logout.php">Sair</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                     <!--Canvas body-->
