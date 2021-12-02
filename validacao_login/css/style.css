@@ -1,0 +1,497 @@
+        /*Style Defautl*/
+        body{
+            overflow-x: hidden;
+        }
+       
+        h1, h2, h4, h5 {
+            color: rgba(202, 146, 123, 1);
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+
+        p, input, label {
+            color: #675E59;
+            font-family: 'Source Sans Pro', sans-serif;
+            text-align: center;
+        }
+
+        /*Style Defautl*/
+
+        /*Style Home*/
+
+        /*style Navbar*/
+        #navbar,
+        .offcanvas,
+        #bgDropdown {
+            background-color: black;
+        }
+
+        .navbar-dark .navbar-nav .nav-link,
+        .offcanvas-title {
+            color: white;
+        }
+
+        .dropdown-toggle::after {
+            content: none;
+        }
+
+        #imgLogoNavbar img{
+            height: 64px;
+            width: 128px;
+        }
+
+        /*style Navbar*/
+
+        /*style Carousel*/
+        #containerCarousel {
+            padding: 0;
+        }
+
+        #carousel,
+        .carousel-item img {
+            width: 100%;
+            max-height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .carousel-control-next-icon,
+        .carousel-control-prev-icon {
+            background-color: black;
+            background-size: 15px;
+            cursor: pointer;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            height: 15px;
+            width: 15px;
+        }
+
+        /*style Carousel*/
+
+        /*Style Bem-Vindo*/
+        #containerBemVindo {
+            margin-top: 5rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .full-height {
+            min-height: 400px;
+        }
+
+        .link-sobre {
+            color: rgba(202, 146, 123, 1);
+        }
+
+        .link-sobre:hover {
+            color: rgba(202, 146, 123, 1);
+        }
+        /*Style Bem-Vindo*/
+
+
+        /*Style Serviço*/
+        #containerServico {
+            padding: 4rem;
+            margin-top: 50px;
+        }
+
+        #containerServico h5{
+            color: #CA927B;
+        }
+
+        #containerServico a{
+            color: white;
+        } 
+
+        #imgFaixada{
+            max-width: 100%;
+            height: 400px;
+            margin: auto;
+        }
+
+        .card {
+            margin: auto;
+            max-width: 400px;
+            margin-top: 50px;
+
+        }
+
+        #imgServico {
+            height: 200px;
+            width: 100%;
+        }
+        /*Style Serviço*/
+
+        /*Style Depoimentos*/
+        #containerDepoimentos {
+            padding: 3rem;
+        }
+
+        .Depoimentos {
+            height: 400px;
+            max-width: 700px;
+            margin: auto;
+            margin-top: 3rem;
+        }
+
+        #indicatosDepoimentos {
+            display: block;
+            margin: 0;
+
+        }
+
+        .imgIndicators {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin: auto;
+            height: 200px;
+            width: 330px;
+        }
+
+        .imgIndicators li {
+            display: inline-block;
+            margin-top: 50px;
+            width: 100px;
+            margin-left: 7px;
+        }
+
+        #carouselDepoimento .carousel-indicators [data-bs-target] {
+            height: 80px;
+            width: 80px;
+            padding: 5px;
+        }
+
+        .text {
+            color: white;
+        }
+
+        /*Style Depoimentos*/
+
+        /*Style Info*/
+        #containerInfo {
+            padding: 15px;
+            margin: auto;
+        }
+
+        #info_text{
+            margin-top: 50px;
+            margin-bottom: 60px;
+            margin-right: 5vh;
+         
+        }
+
+        #contato{
+            height: 50vh; 
+            text-align: center;
+ 
+        }
+
+        #contato_items{
+            width: 100%;
+            position: relative;
+            top: 40%;
+            bottom: 40%;  
+            margin-top: 5px;
+        }
+
+        #contato_items button{
+            color: white;
+        }
+        
+        /*Style Info*/
+
+        /*Style Galeria*/
+        #containerGaleria {
+            padding: 5rem;
+        }
+
+        .galeria {
+            margin-top: 50px;
+        }
+
+        .imgGaleria img {
+            height: 100%;
+        }
+        /*Style Galeria*/
+
+        /*Style Rodapé*/
+        #containerRodape {
+            padding: 4rem;
+            
+        }
+
+        #containerRodape p, h5, li{
+            color: #6c757d;
+            text-align: center;
+            justify-content: center;
+            padding: 0;
+            margin: 2px;
+        }
+
+        #logoRodape {
+            height: 150px;
+        }
+
+        #telefones {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bi-instagram {
+            color: #979797;
+
+        }
+
+        .bi-facebook img {
+            width: 35px;
+            height: 35px;
+        }
+        /*Style Rodapé*/
+
+        /*Style Home*/
+
+        /*Style Sobre*/
+        #containerSobre {
+            margin: 0;
+            padding: 0;
+        }
+
+        #text_sobre {
+            padding: 0;
+        }
+
+        #sobre_container img {
+            padding: 0;
+            margin-left: 5px;
+            max-width: 95%;
+        }
+
+        /*style Carousel*/
+
+        #sobre_car {
+            margin-top: 50px;
+            background: rgba(103, 94, 89, 0.26);
+            position: relative;
+        }
+
+        .card-img-top {
+            height: 40vh;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .owl-prev {
+            left: 10px;
+        }
+
+        .owl-next {
+            right: 10px;
+        }
+
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 35%;
+        }
+
+        .owl-prev span,
+        .owl-next span {
+            font-size: 8vh;
+            color: rgb(255, 255, 255);
+        }
+
+        /*Style Sobre*/
+
+        /*Style Serviço*/
+        #imgServicoFem,
+        #imgServicoMas {
+            height: 50vh;
+        }
+
+        #titleServico {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%);
+            margin: auto;
+        }
+
+        #titleServico hr{
+            height: 4px;
+            color: #FFA200;
+        }
+
+        #cardServicos {
+            padding-top: 4rem;
+
+        }
+
+        #card-servico {
+            width: 100%;
+            height: 450px;
+            margin-bottom: 50px;
+        }
+
+        #servico {
+            max-width: 330px;
+            height: auto;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        #servico hr{
+            height: 2px;   
+            color: #CA927B;
+        }
+
+        #servico a{
+            color: white;
+        }
+
+        /*Style Serviço*/
+
+        /*Style Login*/
+        #containerLogin {
+            background-image: url(/assets/wedding-g888517d16_1280.jpg);
+            min-height: 115vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .formLogin {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -35%);
+        }
+
+        .imgLogoLogin {
+            position: absolute;
+            background-color: black;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -240%);
+        }
+
+        .imgLogoLogin img{
+            margin-top: 16px;
+            height: 59%;
+           
+        }
+
+        .formLogin form {
+            background-color: white;
+            width: 450px;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            margin-bottom: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .input {
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #979797;
+        }
+
+        .icons>.btn {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            outline: none;
+            line-height: 0.9rem;
+        }
+
+        #btnLogar {
+            width: 100px;
+            color: rgba(202, 146, 123, 1);
+            outline: none;
+
+        }
+
+        #createConta {
+            background-color: #dfdfdf;
+            padding: 0.5rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /*Style Login*/
+
+        /*Style Cadastro*/
+        #Cadastro {
+            min-height: 110vh;
+            background-color: #e6e6e6;
+
+        }
+
+        #Cadastro h4 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -500%);
+            z-index: 1;
+        }
+
+        .formCadastro {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .formCadastro form {
+            width: 500px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 20px 20px 20px #aaaaaa;
+        }
+
+        .formCadastro input {
+            width: 100%;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #979797;
+        }
+
+        .formCadastro button{
+            background-color: #FFA200;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .bi-arrow-left{
+            color:rgba(202, 146, 123, 1);
+            
+        }
+        /*Style Cadastro*/
+
+        /*Style Agendamento*/
+        #agenda{
+            margin-top: 2rem;
+            margin-left: 46px;
+            margin-right: 46px;
+            padding: 0;
+        }
+        #imgServicos {
+            width: 100%;
+            height: 300px;
+        }
+        #descricaoServico{
+            height: 300px;
+            padding: 3rem;
+        }
