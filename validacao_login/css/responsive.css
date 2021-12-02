@@ -1,0 +1,74 @@
+@media screen and (min-width: 1340px) {
+
+    #carousel .carousel-inner,
+    #carousel .carousel-item {
+        height: 95vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .formLogin form {
+        width: 330px;
+    }
+
+    #containerDepoimentos {
+        padding: 1rem;
+    }
+
+    .offcanvas-end {
+        width: 250px;
+    }
+
+    #containerGaleria {
+        padding: 2rem;
+    }
+
+    #servico {
+        max-width: 300px;
+    }
+    #containerServico{
+        padding: 2rem;
+    }
+    #containerBemVindo{
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    #containerLogin {
+        min-height: 125vh;
+    }
+
+    .formLogin form {
+        width: 300px;
+        transform: translateY(10%);
+    }
+
+    .imgLogoLogin {
+        transform: translate(-50%, -210%);
+    }
+
+    #createConta {
+        transform: translatey(50%);
+    }
+
+    #containerDepoimentos {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .offcanvas-end {
+        width: 230px;
+    }
+
+    .imgIndicators li {
+        margin-left: 4px;
+    }
+
+    #Servico {
+        max-width: 270px;
+    }
+
+
+}
