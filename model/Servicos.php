@@ -1,7 +1,6 @@
 <?php
 require_once '../../conexao/conexao.php';
 
-
 class Servico
 {
 
@@ -81,6 +80,7 @@ class Servico
         $cmd->bindValue(":d", $dataServico);
         $cmd->execute();
         return true;
+
     }
 }
 
