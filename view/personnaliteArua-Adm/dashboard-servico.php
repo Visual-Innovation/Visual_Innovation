@@ -135,7 +135,11 @@ $s = new Servico;
                                 echo "<tr>";
                                 foreach ($dados[$i] as $k => $v) {
                                     if ($k != 'codServico') {
-                                        echo "<td>" . $v . "</td>";
+                                        if($k == 'valorServico'){
+                                            echo "<td>" ."R$". $v . "</td>";
+                                        }else{
+                                            echo "<td>" . $v . "</td>";
+                                        }
                                     }
                                 }
                         ?>
