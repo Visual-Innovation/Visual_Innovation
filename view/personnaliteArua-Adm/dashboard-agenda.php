@@ -17,7 +17,6 @@ $a = new Agendamento;
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Montserrat:wght@100;200;300;400;500&family=Parisienne&display=swap"
         rel="stylesheet">
 
-
     <title>Dashboard - Agenda</title>
 </head>
 
@@ -176,7 +175,6 @@ $a = new Agendamento;
 
 
 
-<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
