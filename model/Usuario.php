@@ -13,11 +13,11 @@ class Usuario
         $cmd->execute();
         if ($cmd->rowCount() > 0) //Nome do cliente já existe...
         {
-            ?>
+?>
             <div class="alert alert-danger text-center mt-2" role="alert">
-            Usuário já está cadastrado!
+                Usuário já está cadastrado!
             </div>
-            <?php
+<?php
             return false;
         } else {
 
@@ -32,25 +32,26 @@ class Usuario
         }
     }
 
+    public function login($loginUsuario, $senha)
+    {
+        global $pdo;
 
-        public function login($loginUsuario, $senha){
-            global $pdo;
+        $sql = "SELECT * FROM tb_usuario WHERE loginUsuario = :loginUsuario AND senha = :senha";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(":loginUsuario", $loginUsuario);
+        $sql->bindValue(":senha", $senha);
+        $sql->execute();
 
-            $sql = "SELECT * FROM tb_usuario WHERE loginUsuario = :loginUsuario AND senha = :senha";
-            $sql = $pdo->prepare($sql);
-            $sql->bindValue(":loginUsuario", $loginUsuario);
-            $sql->bindValue(":senha", $senha);
-            $sql->execute();
+        if ($sql->rowCount() > 0) {
+            $dado = $sql->fetch();
 
-                if($sql->rowCount() > 0){
-                    $dado = $sql->fetch();
+            $_SESSION['codUsuario'] = $dado['codUsuario'];
 
-                    $_SESSION['codUsuario'] = $dado['codUsuario'];
-
-                     return true;
-                }else{
-                    return false;
-            }
-        }   
+            return true;
+        } else {
+            return false;
+        }
     }
+}
+
 ?>

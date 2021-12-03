@@ -146,7 +146,7 @@ $u = new Usuario;
                                     $con =  new PDO("mysql:dbname=personalite_aruan; host=localhost", 'root', '');
                                     if ($u->cadastrar($nomeUsuario, $loginUsuario, $dataNascimento, $senha)) {
                                         echo "<script>alert('Cadastrado com sucesso!');
-            self.location.href='login.php'</script>";
+                                        self.location.href='login.php'</script>";
                                     }
                                 } else {
                             ?>
