@@ -1,5 +1,11 @@
+<?
+session_start();
+require_once('../conexao/conexao.php');
+?>
+
 <doctype html>
     <html lang="pt-br">
+
 
     <head>
         <meta charset="utf-8">
@@ -8,9 +14,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Montserrat:wght@100;200;300;400;500&family=Parisienne&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Montserrat:wght@100;200;300;400;500&family=Parisienne&display=swap" rel="stylesheet">
 
         <title>Login - Personnalité Aruã Cabelo e Estética</title>
     </head>
@@ -36,8 +40,7 @@
                     <!--Img Logo Navbar-->
 
                     <!--Button-->
-                    <button type="button" id="canvas" class="navbar-toggler" data-bs-toggle="offcanvas"
-                        data-bs-target="#itens">
+                    <button type="button" id="canvas" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#itens">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <!--Button-->
@@ -47,8 +50,7 @@
                         <!--Canvas Header-->
                         <div class="offcanvas-header">
                             <h5 class="offcanvas-title">Personnalité Aruã</h5>
-                            <button type="button" class="btn-close btn-close-white text-reset"
-                                data-bs-dismiss="offcanvas" aria-label="cl"></button>
+                            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="cl"></button>
                         </div>
                         <!--Canvas Header-->
 
@@ -99,7 +101,7 @@
 
                 <div class="formLogin">
                     <!--Form Login-->
-                    <form action="" method="post">
+                    <form action="../../model/logar.php" method="post">
                         <!--Titles-->
                         <h2 class="display-5 text-center mt-4">Login</h2>
                         <p class="lead mb-2 text-center">Faça o login para continuar</p>
@@ -110,15 +112,13 @@
                             Usuário
                         </label>
                         <p>
-                            <input type="email" name="email" id="labelEmail" placeholder="Digite seu E-mail"
-                                class="input p-2">
+                            <input type="email" name="email" id="labelEmail" placeholder="Digite seu E-mail" class="input p-2">
                         </p>
                         <label for="labelPassword" class="form-label">
                             Senha
                         </label>
                         <p>
-                            <input type="password" name="senha" id="labelPassword" placeholder="Digite sua Senha"
-                                class="input p-2">
+                            <input type="password" name="senha" id="labelPassword" placeholder="Digite sua Senha" class="input p-2">
                         </p>
                         <!--Label/Input-->
 
@@ -128,7 +128,7 @@
                                 <input type="checkbox" name="lembrar" id="labelCheck" class="form-check-input">
                                 <label for="labelCheck" class="form-check-label">Lembre-me</label>
                             </div>
-                            <a href="#" class="text-secondary ms-auto link-senha">Esqueceu a senha</a>
+                            <a href="../personnaliteArua/recuperarSenha.php" class="text-secondary ms-auto link-senha">Esqueceu a senha</a>
                         </div>
                         <!--Checkbox/Esqueceu a senha-->
 
@@ -153,8 +153,7 @@
         </div>
         <!--Content-->
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-            integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
         </script>
         <script src="../../js/bootstrap.min.js"></script>
         <script src="../../js/script.js"></script>
