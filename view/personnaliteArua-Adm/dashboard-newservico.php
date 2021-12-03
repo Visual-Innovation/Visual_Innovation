@@ -17,6 +17,7 @@ $s = new Servico;
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Montserrat:wght@100;200;300;400;500&family=Parisienne&display=swap" rel="stylesheet">
 
     <title>Dashboard - Novo Serviço</title>
+
 </head>
 
 <body>
@@ -26,7 +27,6 @@ $s = new Servico;
         $res = $s->buscarDadosServico($id_update);
     }
     ?>
-
     <!--Dashboard-->
     <div id="containerDashboard" class="container-fluid">
         <div class="row">
@@ -36,7 +36,7 @@ $s = new Servico;
                 <ul class="nav">
                     <!--imgLogoDash-->
                     <li id="imgLogoHome" class="nav-item">
-                        <a href="../../view/personnaliteArua/home.html" class="text-decoration-none fs-3">
+                        <a href="../../view/personnaliteArua/home.php" class="text-decoration-none fs-3">
                             <img src="../../assets/Logos/Img_Logo_Padrao.png" alt="Img_Logo_Padrao" class="img-fluid">
                             <span class=" text-center d-none d-xl-block">Home</span>
                         </a>
@@ -45,7 +45,8 @@ $s = new Servico;
 
                     <!--Agenda-item-->
                     <li class="nav-item ">
-                        <a href="dashboard-agenda.html" class="text-decoration-none fs-3">
+                        <a href="dashboard-agenda.php" class="text-decoration-none fs-3">
+
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z" />
                             </svg>
@@ -64,6 +65,7 @@ $s = new Servico;
                         </a>
                     </li>
                     <!--Serviço-item-->
+
                 </ul>
             </div>
             <!--Navbar left-->
@@ -92,6 +94,7 @@ $s = new Servico;
                         <label for="labelValor" class="form-label">Valor</label>
                         <p><input type="text" name="valor" id="labelValor" class="input" value="<?php if (isset($res)) {
                                                                                                     echo $res['valorServico'];
+
                                                                                                 } ?>"></p>
 
                         <div class="d-flex justify-content-end">
@@ -115,6 +118,7 @@ $s = new Servico;
                                 if (!empty($nome) && !empty($tempoEstimado) && !empty($valor)) {
                                     //EDITAR
                                     $s->atualizarDados($id_upd, $nome, $tempoEstimado, $valor, $data);
+
                                     echo "<script>alert('Atualizado Com Sucesso!');
                                     self.location.href='dashboard-servico.php';</script>";
                                 } else {
