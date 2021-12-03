@@ -3,6 +3,7 @@ require_once '../../model/Servicos.php';
 $s = new Servico;
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -52,6 +53,7 @@ $s = new Servico;
                                 class="bi bi-calendar-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z" />
+
                             </svg>
                             <span class="d-none d-xl-inline-block">Agenda</span>
                         </a>
@@ -66,12 +68,10 @@ $s = new Servico;
                                 class="bi bi-scissors" viewBox="0 0 16 16">
                                 <path
                                     d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
-
                             </svg>
                             <span class="d-none d-xl-inline-block">Serviços</span>
                         </a>
-                    </li>
-
+                    </li>)
                 </ul>
             </div>
             <!--Navbar left-->
@@ -97,6 +97,7 @@ $s = new Servico;
                                         <path
                                             d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
 
+
                                     </svg>
                                 </div>
                                 <div id="conteudo" class="">
@@ -119,6 +120,7 @@ $s = new Servico;
                     <!--Btn New Serviço-->
 
                     <!--table-->
+
                     <table class="table table-responsive">
                         <thead>
                             <tr>
@@ -176,12 +178,12 @@ $s = new Servico;
                     <!--table-->
                 </div>
 
+
             </div>
             <!--Serviço-->
         </div>
     </div>
     <!--Dashboard-->
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
@@ -197,3 +199,4 @@ if (isset($_GET['codServico'])) {
     echo "<script>self.location.href='dashboard-servico.php'</script>";
 }
 ?>
+

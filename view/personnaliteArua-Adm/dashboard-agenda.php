@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Montserrat:wght@100;200;300;400;500&family=Parisienne&display=swap"
         rel="stylesheet">
 
+
     <title>Dashboard - Agenda</title>
 </head>
 
@@ -110,6 +111,7 @@
                                     <div id="conteudo" class="col-8">
                                         <h2 class="text-center text-white">2</h2>
                                         <h5 class="text-center text-white">Finalizados</h5>
+
                                     </div>
                                 </div>
                             </div>
@@ -131,18 +133,17 @@
                                 <th scope="col">Data</th>
                                 <th scope="col">Hora</th>
                                 <th scope="col">Ação</th>
-
                             </tr>
                         </thead>
                     </table>
                 </div>
 
-                <!--Table-->
             </div>
             <!--Agenda-->
         </div>
     </div>
     <!--Dashboard-->
+
 
 
 

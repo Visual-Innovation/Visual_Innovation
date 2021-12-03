@@ -1,6 +1,7 @@
 /*Galeria*/
 $(document).ready(function() {
 
+
     $(".galeria .popup-link").magnificPopup({
         type: "image",
         gallery: {
@@ -49,7 +50,6 @@ $(".owl-carousel").owlCarousel({
     }
 });
 //Carousel Sobre
-
 
 function loading() {
     document.getElementsByClassName('box-load')[0].style.display = "none";

@@ -4,6 +4,7 @@ $s = new Servico;
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,6 +28,7 @@ $s = new Servico;
         $res = $s->buscarDadosServico($id_update);
     }
     ?>
+
     <!--Dashboard-->
     <div id="containerDashboard" class="container-fluid">
         <div class="row">
@@ -56,6 +58,7 @@ $s = new Servico;
                     <!--Agenda-item-->
 
                     <!--Serviço-item-->
+
                     <li class="nav-item">
                         <a href="dashboard-servico.php" class="text-decoration-none fs-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
@@ -65,6 +68,7 @@ $s = new Servico;
                         </a>
                     </li>
                     <!--Serviço-item-->
+
 
                 </ul>
             </div>
@@ -149,6 +153,7 @@ $s = new Servico;
                             }
                         }
                         ?>
+
                     </form>
                 </div>
             </div>

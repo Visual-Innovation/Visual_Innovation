@@ -4,6 +4,7 @@
     <head>
 
         <!-- Required meta tags-->
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../../css/magnific-popup.css">
@@ -612,6 +613,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
             integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+
         </script>
         <script src="../../js/bootstrap.min.js"></script>
         <script src="../../js/jquery-3.6.0.min.js"></script>

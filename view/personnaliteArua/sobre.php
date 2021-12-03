@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Montserrat:wght@100;200;300;400;500&family=Parisienne&display=swap"
         rel="stylesheet">
 
+
     <title>Sobre - Personnalité Aruã Cabelo e Estética</title>
 </head>
 
@@ -445,6 +446,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+
     </script>
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/jquery-3.6.0.min.js"></script>
