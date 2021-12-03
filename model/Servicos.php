@@ -38,6 +38,7 @@ class Servico
         } else {
             $cmd = $pdo->prepare("INSERT INTO servico (nomeServico,tempoEstimado,valorServico,
              dataServico)
+
                 VALUES(:n,:tmp,:vl,:d)");
             $cmd->bindValue(":n", $nome);
             $cmd->bindValue(":tmp", $tempoEstimado);
