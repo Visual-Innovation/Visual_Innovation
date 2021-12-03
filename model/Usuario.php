@@ -29,6 +29,7 @@ class Usuario
             $cmd->bindValue(":s", $senha);
             $cmd->execute();
             return true;
+
         }
     }
 
@@ -55,4 +56,5 @@ class Usuario
 }
 
 ?>
+
 
