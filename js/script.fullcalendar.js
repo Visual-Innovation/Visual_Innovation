@@ -1,5 +1,5 @@
 //Calendar
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         locale: 'pt-br',
         themeSystem: '',
 
-        select: function (info) {
+        select: function(info) {
             $('#agendar #date').val(info.start.toLocaleString());
             $('#agendar').modal('show');
         }
