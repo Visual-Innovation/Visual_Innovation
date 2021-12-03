@@ -18,6 +18,15 @@ class Agendamento
         $cmd->execute();
         return true;
     }
+
+    public function buscarDados()
+    {
+        global $pdo;
+        $res = array();
+        $cmd = $pdo->query("SELECT s.codServico,s.nomeServico, s.dataServico,s.tempoEstimado
+         FROM servico AS s ORDER BY nomeServico");
+        $res = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+    }
 }
-
-
+?>

@@ -1,3 +1,8 @@
+<?php
+require_once '../../model/Agendamento.php';
+$a = new Agendamento;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,11 +58,13 @@
                                 class="bi bi-scissors" viewBox="0 0 16 16">
                                 <path
                                     d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+
                             </svg>
                             <span class="d-none d-xl-inline-block">Serviços</span>
                         </a>
                     </li>
                     <!--Serviço-item-->
+
                 </ul>
             </div>
             <!--Navbar left-->
@@ -78,15 +85,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4 d-flex justify-content-center align-items-center ">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-calendar-week-fill icons" viewBox="0 0 16
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week-fill icons" viewBox="0 0 16
                                             16">
-                                            <path
-                                                d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+                                            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
                                         </svg>
                                     </div>
                                     <div id="conteudo" class="col-8">
-                                        <h2 class="text-center text-white">5</h2>
+                                        <h2 class="text-center text-white">0</h2>
                                         <h5 class="text-center text-white">Agendados</h5>
                                     </div>
                                 </div>
@@ -101,11 +106,9 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4 d-flex justify-content-center align-items-center ">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-calendar-check-fill icons" viewBox="0 0 16
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check-fill icons" viewBox="0 0 16
                                             16">
-                                            <path
-                                                d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                                            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
                                         </svg>
                                     </div>
                                     <div id="conteudo" class="col-8">
@@ -135,7 +138,33 @@
                                 <th scope="col">Ação</th>
                             </tr>
                         </thead>
+                        <?php
+                        $dados = $a->buscarDados();
+                        if (count($dados) > 0) { // Tem Pessoas cadastradas no banco 
+                            for ($i = 0; $i < count($dados); $i++) {
+                                echo "<tr>";
+                                foreach ($dados[$i] as $k => $v) {
+                                    echo "<td>" . $v . "</td>";
+                                }
+
+                        ?>
+                                <td>
+                                    <a href="dashboard-newservico.php?codServico=">Editar</a>
+                                    <a href="dashboard-servico.php?codServico=<?php echo $dados[$i]['codServico']; ?>">Confirmar</a>
+                                </td>
+                            <?php
+                                echo "</tr>";
+                            }
+                        } else {
+                            ?>
                     </table>
+                    <div class="aviso">
+                        <h4>Ainda não há Clientes Agendados!</h4>
+                    </div>
+                <?php
+                        }
+                ?>
+                </table>
                 </div>
 
             </div>
@@ -147,6 +176,7 @@
 
 
 
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
