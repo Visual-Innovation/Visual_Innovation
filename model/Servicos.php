@@ -68,7 +68,7 @@ class Servico
     }
 
     public function atualizarDados($id, $nome, $tempoEstimado, $valor)
-    {   
+    {
         global $pdo;
         $cmd = $pdo->prepare("UPDATE servico SET nomeServico = :n, tempoEstimado = :t, 
         valor = :v WHERE codServico = :id");
