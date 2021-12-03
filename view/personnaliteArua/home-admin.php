@@ -9,7 +9,7 @@
 <body>
     <h1>Página de Admin</h1>
 
-    <a href="../view/logout.php">Sair</a>
+    <a href="../view/personnaliteArua/logout.php">Sair</a>
 
 </body>
 </html>
