@@ -2,7 +2,6 @@
 
 require_once '../../conexao/conexao.php';
 
-
 class Agendamento
 {
 
@@ -20,4 +19,5 @@ class Agendamento
         return true;
     }
 }
+
 
