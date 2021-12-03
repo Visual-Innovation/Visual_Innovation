@@ -103,6 +103,7 @@ $u = new Usuario;
                 </div>
                 <!--Return Login-->
 
+<<<<<<< HEAD
                 <!--tilte-->
                 <div class="title-cadastro">
                     <h1 class="text-center">Complete sua Conta Pessoal</h1>
